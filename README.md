@@ -13,6 +13,7 @@ It is an open source container management tool. It can help in automate the depl
 
 ## Kubernetes Jargons
 -   Kubernetes Clusters
+    ![alt text](https://github.com/konicapatait/kubernetes/blob/master/images/kubernetes-clusters.png "kubernetes Cluster")
 -   Master
     -   etcd
     -   API Server
@@ -62,8 +63,12 @@ It is an open source container management tool. It can help in automate the depl
     -   `kubectl run`
     
             kubectl run kubernetes-bootcamp --image=gcr.io/google-samples/kubernetes-bootcamp:v1 --port=8080
-            
+
     -   `kubectl get deployments`
+
+    -   `kubectl proxy`
+
+        This command create a proxy that will forward the communication into the cluster-wide private network
 
 -   Kubernetes Pods
 
