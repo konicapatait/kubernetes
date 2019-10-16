@@ -71,17 +71,46 @@ Kubernetes is a container platform. Docker is used to develop and build the appl
 -   Kubernetes Clusters
 
     ![alt text](https://github.com/konicapatait/kubernetes/blob/master/images/kubernetes-clusters.png "kubernetes Cluster")
-    
+
 -   Master
-    -   etcd
-    -   API Server
+
+    It takes care of overall management of kubernetes cluster.
+
+    -   The API Server
+        -   Kube API server allows to communicate with Kubernetes API.
     -   Controller Manager
     -   Scheduler
--   Node
-    -   Docker
-    -   Kubelet Service
+        -    created
+    
+     -   etcd
+        -   Simple distributed key value storage.
+        -   Kubernetes uses this as a database and store all cluster data in there like job scheduling info, pod details, stage information etc.
+    -   Kubectl
+        -   To interact with master node; it is a command line interface for Kubernetes.
+        -   It has config file called as kubeconfig. It has server information and authenitification information to access the API server.
+
+-   Worker Nodes
+
+    It is where the application operates. It communicate back with master node and communication is handled by **kubelet process**. 
+
+    -   Container running platform / Docker
+
+    -   Kubelet Service/ Kubelet Process
+
+        It is a agent that communicate with API Server, if the PODS have been designed to the nodes.
+        It executes the pod container. It mounts and runs PODS volume and secrets. Also, it is aware about the PODS state on node and respond it back to master node.
     -   Kubernetes Proxy Service
+
+        Network proxy and load balancer for a service, on a single Worker node.
+        Handles network routing for TCP and UDP packets and perform connection forwarding.
+
 -   Node Processes
+
+-   POD
+
+    Containers of an applications are tightly couple together in a POD. So by definition
+
+        POD is a smallest unit that can be scheduled as a deployment in kubernetes. This group of containers share storage, linux name space, IP addressess etc.
 
 ![alt text](https://github.com/konicapatait/kubernetes/blob/master/images/kubernetes-arch.png "kubernetes Components")
 
@@ -132,4 +161,9 @@ Kubernetes is a container platform. Docker is used to develop and build the appl
 
     It is a group of containers that are deployed together on the same host. If you frequently deploy single containers, you can generally replace the word "pod" with "container" and accurately understand the concept.
 
--   
+
+## Kubernetes Architecture
+    ![alt text](https://github.com/konicapatait/kubernetes/blob/master/images/kubernetes-architecture.png "kubernetes Architecture")
+
+    -   Master Node
+        - 
