@@ -163,7 +163,8 @@ Kubernetes is a container platform. Docker is used to develop and build the appl
 
 
 ## Kubernetes Architecture
-    ![alt text](https://github.com/konicapatait/kubernetes/blob/master/images/kubernetes-architecture.png "kubernetes Architecture")
 
-    -   Master Node
-        - 
+-   When Pods are deployed and running, the Kubelet process communicates with the PODS to check on the state and health, and kube proxy routes any packets to the PODS from any resources that might want to communicate with them.
+
+![kubernetes Architecture](https://github.com/konicapatait/kubernetes/blob/master/images/kubernetes-architecture.png "kubernetes Architecture")
+
