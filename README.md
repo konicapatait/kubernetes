@@ -1,6 +1,59 @@
 # Kubernetes
 
+## What is container?
+
+A container is a collection of software processes unified by one namespace with access to an operating system kernel that it shares with other containers with little or no access to other containers.
+
+## Container Orchestrator Features
+-   Provison Hosts
+-   Intantiate container on a host
+-   Restart failing containers
+-   Expose containers as a services outside the cluster
+-   Scaling the cluster up and down
+
+## Players in Market
+-   Docker Swarm 
+    -   Used by startups and mid-size organizations
+-   Mesos
+    -   Oldest in the market and mostly driven by developers.
+    -   Complex architecture than Docker Swarm.
+-   Rancher
+-   Kubernetes
+
+![alt text](https://github.com/konicapatait/kubernetes/blob/master/images/container-orchestration.png "Container Orchestration")
+
+## Kubernetes
+
 It is an open source container management tool. It can help in automate the deployment, scaling up the application, and operation of application containers across clusters. It helps in moving from the host-centric infrastructure to container-centric infrastructure.
+
+## Kubernetes Features
+
+-   Multi-Host Container Scheduling
+    -   Handled by Kube Scheduler
+    -   Assigns Pods to nods at runtime
+    -   Checks resources, quality of services, policies, user specifications before scheduling
+-   Scalability and Availability
+    -   K8s master can be deployed in highly available configuration.
+    -   Multi region deployments available.
+    -   Supports 5000 node clusters, 150,000 total pods.
+    -   2 features that allow scalibility at K8s level: Registration and Service Discovery.
+        -   New worker nodes can seemlessly register themselves with the master node.
+        -   Allows automatic detection of services and endpoints via DNS or environment variables. 
+-   Flexibility and Modularization
+    -   Plug and play architecture; extend the architecture when needed.
+    -   Add-ons: Network drivers etc.
+-   Application Upgrades and Downgrades
+    -   K8s supports the backword compatibility.
+    -   During K8s maintanence, unregister the host so that no deployment can happen and ones it is done, turn on the host and schedule the deployments on it.
+-   Logging and monitoring
+    -   Built-in application monitoring
+    -   Node health check handled by node controller
+    -   K8s status is 
+-    Secret Management
+    -   Sensitive data is first class citizen.
+    -   Mounted as data volumes or env variables
+    -   Specific to namespace.
+
 
 ## What can Kubernetes do?
 -   Create Kubernetes cluster
@@ -10,10 +63,15 @@ It is an open source container management tool. It can help in automate the depl
 -   Scale up your app
 -   Update your app
 
+## Kubernetes and Docker
+
+Kubernetes is a container platform. Docker is used to develop and build the application. Kubernetes is used to schedule and run the containers on your infrastructure.
 
 ## Kubernetes Jargons
 -   Kubernetes Clusters
+
     ![alt text](https://github.com/konicapatait/kubernetes/blob/master/images/kubernetes-clusters.png "kubernetes Cluster")
+    
 -   Master
     -   etcd
     -   API Server
